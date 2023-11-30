@@ -1,0 +1,9 @@
+users=[
+    {'name':'hameed',
+    'email':hameed@gmail.com,
+    'age':23
+    },
+    {'name':'shafiullah'
+    'email':shafiullah@gmail.com,
+    'age':23}
+]

@@ -1,0 +1,23 @@
+const http=require('http')
+const server=http.createServer(function(request,response){
+    if(request.url=='/') return responseText(request,response)
+    if(request.url=='/json') return responseJson(request,response)
+    requestNotFound(request,response)
+})
+
+function responseText(request,response){
+    response.setHeader('Content-Type','text/plain')
+    response.end('Hello')
+}
+
+function responseJson(request,response){
+    response.setHeader('Content-Type','application/json')
+    response.end(JSON.stringify({'name':'Riyas','age':23,'number':[1,2,3,4,5]}))
+}
+
+function requestNotFound(request,response){
+    response.writeHead(404,{'Content-Type':'text/plain'})
+    response.end('request is not found')
+}
+
+server.listen(8001)
